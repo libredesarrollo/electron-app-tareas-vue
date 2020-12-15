@@ -5,20 +5,31 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "DEBUG=true electron ."
   },
+  "main": "main.js",
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "electron-db": "^0.15.7",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "vue": "^2.6.12",
+    "vue-material": "^1.0.0-beta-15",
+    "vue-router": "^3.3.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-plugin-router": "^4.4.6",
     "@vue/cli-service": "~4.2.0",
     "babel-eslint": "^10.0.3",
+    "electron": "^11.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
