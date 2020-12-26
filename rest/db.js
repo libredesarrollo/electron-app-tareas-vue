@@ -47,6 +47,11 @@ module.exports.login = function (username, password, callback) {
         })
     }
 }
+module.exports.logout = function (token) {
+    if (connection) {
+        connection.query('DELETE FROM user_tokens WHERE token = ?', token)
+    }
+}
 
 module.exports.getUserToken = function (user_id, callback) {
     if (connection) {

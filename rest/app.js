@@ -39,6 +39,13 @@ app.post('/login',cors(corsOptions), function (req, res) {
     })
 });
 
+app.post('/logout',cors(corsOptions), function (req, res) {
+    console.log("logout")
+    task.logout(req.body.token)
+    auth.set_auth("")
+    res.json("Ok")
+});
+
 /** Tareas */
 
 app.get('/task',cors(corsOptions), function (req, res) {

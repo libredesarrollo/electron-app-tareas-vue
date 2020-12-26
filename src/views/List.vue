@@ -2,6 +2,7 @@
   <div>
     <md-button v-on:click="itemCreate" class="md-raised md-primary">Crear</md-button>
     <md-button v-if="!$root.isAuth()" v-on:click="openWindowLogin" class="md-raised md-primary">Login</md-button>
+    <md-button v-else v-on:click="logout" class="md-raised md-accent">Cerrar Sesión</md-button>
 
     <md-list class="md-elevation-2">
       <md-list-item v-for="(item, key) in items" v-bind:key="item.id">
@@ -74,6 +75,15 @@ export default {
     .then(res => this.items = res)*/
   },
   methods: {
+    logout: function(){
+      let data = {
+        token: this.$root.token
+      }
+      axios.post("http://localhost:3000/logout",data).then(() => {
+        location.reload()
+
+      })
+    },
     openWindowLogin: function(){
       const { ipcRenderer } = window.require("electron");
       ipcRenderer.send('open-window-login')
